@@ -147,8 +147,8 @@ Transform:
   m_GameObject: {fileID: 405643079}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -0.43, z: 0.040104106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.007, y: -0.408, z: 0.040104106}
+  m_LocalScale: {x: 1.83, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1741357757}
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -245,6 +246,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210db47da292a084ca2f0517ebc956f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1741357757}
 --- !u!1 &1313492518
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +270,7 @@ GameObject:
   - component: {fileID: 1313492521}
   - component: {fileID: 1313492520}
   - component: {fileID: 1313492519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 1313492518}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.91, y: -3.21, z: 0}
+  m_LocalPosition: {x: 1.97, y: -3.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -386,7 +400,7 @@ GameObject:
   - component: {fileID: 1698194771}
   - component: {fileID: 1698194770}
   - component: {fileID: 1698194769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,6 +551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776942cc70de8494685d4dae544941f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1741357754}
+  ground_check: {fileID: 405643080}
+  ground_layer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1741357754
 Rigidbody2D:
   serializedVersion: 4
@@ -552,7 +571,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -573,7 +592,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1741357752}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2ab0059845b98234396983ea89b9e279, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
