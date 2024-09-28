@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : MonoBehaviour
+public class Ability
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected string name;
+    protected string description;
+    protected float cool_down;
+    protected Sprite icon;
+    protected enum ability_type {PERMANENT, ONETIME};
+
+
+
 }
