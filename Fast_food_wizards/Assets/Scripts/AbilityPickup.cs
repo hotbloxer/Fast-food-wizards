@@ -9,21 +9,38 @@ public class AbilityPickup : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private Level_control level;
+    [SerializeField] private abilities active_ability;
 
 
-    private DoubleJump double_jump;
+
+    private dynamic current_ability;
+
+    private enum abilities {DOUBLEJUMP, SUICIDE}
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        double_jump.use_ability();
+        current_ability.use_ability();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        double_jump = new DoubleJump(player, level); 
+        switch (active_ability)
+        {
+            default:
+                break;
+
+            case abilities.DOUBLEJUMP:
+                current_ability = new DoubleJump(player, level);
+                break;
+
+        }
+
+
+        current_ability = new DoubleJump(player, level); 
     }
 
     // Update is called once per frame
