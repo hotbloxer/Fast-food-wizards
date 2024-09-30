@@ -7,7 +7,7 @@ public class Main_game : MonoBehaviour
 {
 
     [SerializeField] Player player;
-    [SerializeField] Level_control level;
+    [SerializeField] WallBoxes level;
     
 
 

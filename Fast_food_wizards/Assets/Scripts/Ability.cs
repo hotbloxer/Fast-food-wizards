@@ -11,6 +11,9 @@ public class Ability
     protected Sprite icon;
     protected enum ability_type {PERMANENT, ONETIME};
 
-
+    virtual public void use_ability()
+    {
+        
+    }
 
 }

@@ -8,12 +8,12 @@ public class AbilityPickup : MonoBehaviour
 {
 
     [SerializeField] private Player player;
-    [SerializeField] private Level_control level;
+    [SerializeField] private WallBoxes level;
     [SerializeField] private abilities active_ability;
 
 
 
-    private dynamic current_ability;
+    private Ability current_ability;
 
     private enum abilities {DOUBLEJUMP, SUICIDE}
 
@@ -36,7 +36,7 @@ public class AbilityPickup : MonoBehaviour
             case abilities.DOUBLEJUMP:
                 current_ability = new DoubleJump(player, level);
                 break;
-
+                
         }
 
 

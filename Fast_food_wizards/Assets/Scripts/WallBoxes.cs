@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level_control : MonoBehaviour
+public class WallBoxes : MonoBehaviour
 {
 
     [SerializeField] private Transform player;
@@ -12,7 +12,7 @@ public class Level_control : MonoBehaviour
     void Update()
     {
       
-        transform.position = new Vector2(transform.position.x, player.position.y);
+       transform.position = new Vector2(transform.position.x, player.position.y);
         
     }
 }

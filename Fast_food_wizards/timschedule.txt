@@ -1,2 +1,2 @@
-Peter: 3 timer
+Peter: 3,4 timer
 Victor: 
