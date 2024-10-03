@@ -554,6 +554,7 @@ MonoBehaviour:
   player: {fileID: 1741357753}
   level: {fileID: 0}
   active_ability: 1
+  platform: {fileID: 880225654}
 --- !u!212 &756379196
 SpriteRenderer:
   m_ObjectHideFlags: 0
