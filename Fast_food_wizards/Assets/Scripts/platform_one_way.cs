@@ -19,7 +19,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            print("test jump");
             effector.rotationalOffset = 0;
         }
 

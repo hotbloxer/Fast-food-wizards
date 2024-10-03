@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,6 +12,9 @@ public class AbilityPickup : MonoBehaviour
     [SerializeField] private WallBoxes level;
     [SerializeField] private abilities active_ability;
     [SerializeField] private GameObject platform;
+    [SerializeField] private Power_holder power_holder;
+
+
 
 
 
@@ -23,9 +27,11 @@ public class AbilityPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        current_ability.use_ability();
+        current_ability.grant_ability(power_holder, current_ability);
+        Destroy(gameObject);
     }
 
+    
 
     // Start is called before the first frame update
     void Start()
