@@ -24,4 +24,6 @@ public class Ability
         power_holder.set_active_ability(ability);
     }
 
+
+
 }

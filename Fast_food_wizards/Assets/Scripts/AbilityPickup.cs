@@ -13,6 +13,7 @@ public class AbilityPickup : MonoBehaviour
     [SerializeField] private abilities active_ability;
     [SerializeField] private GameObject platform;
     [SerializeField] private Power_holder power_holder;
+    
 
 
 

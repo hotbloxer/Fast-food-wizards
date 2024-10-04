@@ -9,7 +9,6 @@ public class DoubleJump : Ability
     private Player player;
     private WallBoxes level_Control;
     private string _icon_name = "Assets/Assets/PowerIcons/double jump.png";
-    private int use_count = 0;
 
     public DoubleJump(Player player_set, WallBoxes level_Control_set)
     {
