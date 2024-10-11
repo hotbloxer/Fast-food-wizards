@@ -6,6 +6,8 @@ using UnityEngine;
 public class DoubleJump : Ability
  {
 
+    [SerializeField] UnityEngine.UI.Image local_icon;
+
     private Player player;
     private WallBoxes level_Control;
     private string _icon_name = "Assets/Assets/PowerIcons/double jump.png";
@@ -15,7 +17,7 @@ public class DoubleJump : Ability
         player = player_set;
         level_Control = level_Control_set;
         Console.WriteLine("set icon");
-        icon = Resources.Load<Sprite>(_icon_name);
+        //icon = Resources.Load<Sprite>(_icon_name);
     }
 
     public override void grant_ability(Power_holder power_holder, Ability ability)

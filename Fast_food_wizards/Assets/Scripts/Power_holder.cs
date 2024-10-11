@@ -14,9 +14,6 @@ public class Power_holder : MonoBehaviour
     [SerializeField] private GameObject firebolt_obj;
     [SerializeField] private Player _player;
 
-    [SerializeField] Image power_icon_UI;
-    [SerializeField] Image firebolt_icon;
-
 
 
 
@@ -28,7 +25,7 @@ public class Power_holder : MonoBehaviour
     private bool _fireball_available = true;
 
 
-    FireBolt _firebolt;
+    private FireBolt _firebolt;
 
 
 
@@ -37,7 +34,6 @@ public class Power_holder : MonoBehaviour
     {
         current_ability = ability;
 
-        
         ui.change_power_icon(current_ability);
 
     }
@@ -51,6 +47,7 @@ public class Power_holder : MonoBehaviour
     void Start()
     {
         _firebolt = new FireBolt(_player, firebolt_obj);
+        
         //_fireball_speed = _firebolt.Firebolt_speed;
 
     }
@@ -84,7 +81,11 @@ public class Power_holder : MonoBehaviour
         if(Input.GetButtonDown("Fire2") )
         {
             print("Fire");
-            current_ability.use_ability();
+            // HACK
+            //current_ability.use_ability();
+            ui.change_power_icon(_firebolt);
+
+
         }
 
 

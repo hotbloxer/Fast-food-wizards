@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Net.Security;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class FireBolt : Ability
 {
 
-
+    public power_ui_library power_lib;
     GameObject _fireBolt;
     Player _player;
+    [SerializeField] SpriteRenderer _spriteRenderer;
+    private Texture2D local_icon;
+   
 
-
-    public FireBolt (Player player, GameObject fireBolt)
+    public FireBolt (Player player, GameObject fireBolt )
     {
         _player = player;
         _fireBolt = fireBolt;
+        icon = power_lib.get_icon(power_ui_library.power_library.FIREBOLT);
+
+
+
     }
 
     public void shoot()

@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Ability
+public class Ability : MonoBehaviour
 {
-
+   
     protected string name;
     protected string description;
     protected float cool_down;
-    protected Sprite icon;
+    protected Image icon;
 
-    public Sprite Icon { get => icon;} 
+    public UnityEngine.UI.Image Icon { get => icon;} 
 
     protected enum ability_type {PERMANENT, ONETIME};
 
