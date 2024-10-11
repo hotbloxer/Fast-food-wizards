@@ -27,7 +27,7 @@ public class FireBolt_Mechanics : MonoBehaviour
     public void shoot()
     {
         
-        rb.AddForce(new Vector3(Random.Range(-1f, 1f) * Speed * 0.5f, Speed, 0));
+        rb.AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 1, 0).normalized * Speed);
 
 
 

@@ -1,22 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Security;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FireBolt : Ability
+public class Fireboltversion2 : MonoBehaviour
 {
 
+    [SerializeField] private SpriteRenderer icon_image;
 
-    GameObject _fireBolt;
-    Player _player;
+    [SerializeField] private GameObject _fireBolt;
+    [SerializeField] private Player _player;
 
-
-    public FireBolt (Player player, GameObject fireBolt)
-    {
-        _player = player;
-        _fireBolt = fireBolt;
-    }
 
     public void shoot()
     {
@@ -32,7 +26,15 @@ public class FireBolt : Ability
         _fireBolt.gameObject.transform.position = new Vector3 (-10,-10, 10);
 
     }
- 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
-

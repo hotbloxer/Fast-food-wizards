@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEditor.U2D;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Power_holder : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class Power_holder : MonoBehaviour
     [SerializeField] UI ui;
     [SerializeField] private GameObject firebolt_obj;
     [SerializeField] private Player _player;
+
+    [SerializeField] Image power_icon_UI;
+    [SerializeField] Image firebolt_icon;
+
+
 
 
     private float _firebolt_cooldown = 1;
@@ -45,7 +51,7 @@ public class Power_holder : MonoBehaviour
     void Start()
     {
         _firebolt = new FireBolt(_player, firebolt_obj);
-        _fireball_speed = _firebolt.Firebolt_speed;
+        //_fireball_speed = _firebolt.Firebolt_speed;
 
     }
 
