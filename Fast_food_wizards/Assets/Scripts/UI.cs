@@ -9,7 +9,7 @@ public class UI : MonoBehaviour
 {
 
  
-    [SerializeField] UnityEngine.UI.Image icon_image;
+    [SerializeField] GameObject icon_displayer;
 
 
     private void Start()
@@ -18,8 +18,9 @@ public class UI : MonoBehaviour
     }
     public void change_power_icon (Ability ability)
     {
-        icon_image = ability.Icon;
-        
+        print("tes om sprite aktivrees");
+        icon_displayer.GetComponent<UnityEngine.UI.Image>().sprite = ability.Icon;
+        print("tes om sprite aktivrees");
 
     }
 

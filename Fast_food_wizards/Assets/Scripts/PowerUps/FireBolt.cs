@@ -9,22 +9,17 @@ using UnityEngine.UIElements;
 public class FireBolt : Ability
 {
 
-    public power_ui_library power_lib;
-    GameObject _fireBolt;
-    Player _player;
-    [SerializeField] SpriteRenderer _spriteRenderer;
-    private Texture2D local_icon;
-   
+    
+    [SerializeField] GameObject _fireBolt;
+    [SerializeField] Player _player;
 
-    public FireBolt (Player player, GameObject fireBolt )
+
+
+    public void Start()
     {
-        _player = player;
-        _fireBolt = fireBolt;
-        icon = power_lib.get_icon(power_ui_library.power_library.FIREBOLT);
-
-
-
+        icon = GetComponent<SpriteRenderer>().sprite;
     }
+
 
     public void shoot()
     {
@@ -37,7 +32,7 @@ public class FireBolt : Ability
     {
         _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         _fireBolt.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
-        _fireBolt.gameObject.transform.position = new Vector3 (-10,-10, 10);
+        _fireBolt.gameObject.transform.position = new Vector3 (-50,-50, 1);
 
     }
  

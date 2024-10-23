@@ -14,6 +14,7 @@ public class Power_holder : MonoBehaviour
     [SerializeField] private GameObject firebolt_obj;
     [SerializeField] private Player _player;
 
+ 
 
 
 
@@ -25,7 +26,7 @@ public class Power_holder : MonoBehaviour
     private bool _fireball_available = true;
 
 
-    private FireBolt _firebolt;
+    [SerializeField] private FireBolt _firebolt;
 
 
 
@@ -46,9 +47,7 @@ public class Power_holder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _firebolt = new FireBolt(_player, firebolt_obj);
-        
-        //_fireball_speed = _firebolt.Firebolt_speed;
+
 
     }
 
@@ -61,6 +60,7 @@ public class Power_holder : MonoBehaviour
             {
                 _firebolt.shoot();
                 _fireball_available = false;
+
             }
         }
         else
@@ -81,9 +81,8 @@ public class Power_holder : MonoBehaviour
         if(Input.GetButtonDown("Fire2") )
         {
             print("Fire");
-            // HACK
-            //current_ability.use_ability();
-            ui.change_power_icon(_firebolt);
+            
+            current_ability.use_ability();
 
 
         }

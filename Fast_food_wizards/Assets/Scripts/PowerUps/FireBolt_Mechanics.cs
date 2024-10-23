@@ -6,6 +6,8 @@ public class FireBolt_Mechanics : MonoBehaviour
 {
     private int _speed = 700;
 
+    [SerializeField] Rigidbody2D player_Rb;
+
     [SerializeField] Rigidbody2D rb;
 
     public int Speed { get => _speed; set => _speed = value; }
@@ -26,8 +28,19 @@ public class FireBolt_Mechanics : MonoBehaviour
 
     public void shoot()
     {
-        
-        rb.AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 1, 0).normalized * Speed);
+        Vector3 velocity = player_Rb.velocity;
+        Vector3 aim_direction = Vector3.Normalize(new Vector3(Random.Range(-0.2f, 0.2f), 1, 0));
+
+        print(velocity);
+
+        if (velocity.magnitude < 1) 
+        {
+            velocity = new Vector3(1,1,1);
+        }
+
+
+
+        rb.AddForce((aim_direction * Speed) + velocity);
 
 
 

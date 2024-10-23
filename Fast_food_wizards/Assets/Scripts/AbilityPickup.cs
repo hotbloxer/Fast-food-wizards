@@ -13,6 +13,7 @@ public class AbilityPickup : MonoBehaviour
     [SerializeField] private abilities active_ability;
     [SerializeField] private GameObject platform;
     [SerializeField] private Power_holder power_holder;
+    [SerializeField] private Ability double_jump;
     
 
 
@@ -22,8 +23,11 @@ public class AbilityPickup : MonoBehaviour
 
     private Ability current_ability;
 
+    
+
     private enum abilities {DOUBLEJUMP, SPAWNMEAT, SUICIDE}
 
+    
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,15 +44,16 @@ public class AbilityPickup : MonoBehaviour
         switch (active_ability)
         {
             default:
+
                 break;
 
             case abilities.DOUBLEJUMP:
-                current_ability = new DoubleJump(player, level);
+                current_ability = double_jump;
                 break;
 
             case abilities. SPAWNMEAT:
                 // TODO
-                current_ability = new SpawnMeat(player, level, platform);
+                //current_ability = new SpawnMeat(player, level, platform);
                 break;
 
         }

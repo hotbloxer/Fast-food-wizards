@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetButtonDown("Vertical")) 
         {
-            
+         
             effector.rotationalOffset = 180;
         }
 

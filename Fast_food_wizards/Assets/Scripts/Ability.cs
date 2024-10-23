@@ -9,9 +9,9 @@ public class Ability : MonoBehaviour
     protected string name;
     protected string description;
     protected float cool_down;
-    protected Image icon;
+    protected Sprite icon;
 
-    public UnityEngine.UI.Image Icon { get => icon;} 
+    public Sprite Icon { get => icon; } 
 
     protected enum ability_type {PERMANENT, ONETIME};
 

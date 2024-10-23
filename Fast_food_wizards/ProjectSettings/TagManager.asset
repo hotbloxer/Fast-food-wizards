@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 3441697631
+    locked: 0
+  - name: interactive
+    uniqueID: 663450697
+    locked: 0
+  - name: playe and camera
+    uniqueID: 2676288733
+    locked: 0
