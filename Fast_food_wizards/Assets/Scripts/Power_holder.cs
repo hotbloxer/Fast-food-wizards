@@ -80,7 +80,7 @@ public class Power_holder : MonoBehaviour
 
         if(Input.GetButtonDown("Fire2") )
         {
-            print("Fire");
+           
             
             current_ability.use_ability();
 

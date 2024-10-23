@@ -14,7 +14,9 @@ public class AbilityPickup : MonoBehaviour
     [SerializeField] private GameObject platform;
     [SerializeField] private Power_holder power_holder;
     [SerializeField] private Ability double_jump;
-    
+    [SerializeField] private Ability spawn_meat;
+
+
 
 
 
@@ -51,9 +53,9 @@ public class AbilityPickup : MonoBehaviour
                 current_ability = double_jump;
                 break;
 
-            case abilities. SPAWNMEAT:
-                // TODO
-                //current_ability = new SpawnMeat(player, level, platform);
+            case abilities.SPAWNMEAT:
+                
+                current_ability = spawn_meat;
                 break;
 
         }

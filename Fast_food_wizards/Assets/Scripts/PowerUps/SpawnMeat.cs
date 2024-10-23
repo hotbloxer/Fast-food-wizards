@@ -7,23 +7,18 @@ using UnityEngine;
 public class SpawnMeat : Ability
 {
 
-    private Player player;
-    private WallBoxes level_Control;
-    private GameObject platform;
-    
-    
+    [SerializeField] Player player;
+    [SerializeField]  WallBoxes level_Control;
+    [SerializeField] GameObject platform;
 
-    public SpawnMeat(Player player_set, WallBoxes level_Control_set, GameObject platform_set)
+    private void Start()
     {
-        
-        player = player_set;
-        level_Control = level_Control_set;
-        platform = GameObject.Instantiate(platform_set);
-        
+        icon = GetComponent<SpriteRenderer>().sprite;
+    }
 
-        
+    public SpawnMeat()
+    {
 
-        
     }
 
 
