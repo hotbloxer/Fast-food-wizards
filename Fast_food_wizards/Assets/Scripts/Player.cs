@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform ground_check;
     [SerializeField] private LayerMask ground_layer;
 
+    [SerializeField] private UI ui;
+
     public int Double_jumps { set => _double_jump_max = value; get => _double_jump_max;}
 
 
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour
 
         flip();
 
-
+        delay_to_next_trigger++; 
 
 
     }
@@ -69,16 +71,28 @@ public class Player : MonoBehaviour
 
 
     }
-
-    
-
+    int delay_to_next_trigger = 10; // to prevent double trigger of OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.relativeVelocity.magnitude >= _max_fall_velocity) 
+        if (delay_to_next_trigger > 10)
         {
+            if (collision.relativeVelocity.magnitude >= _max_fall_velocity)
+            {
+                take_damage();
+                delay_to_next_trigger = 0;
+            }
+        }
 
-            print("take damgae");
+    }
+
+    private void take_damage()
+    {
+        _health -= 1;
+        ui.LoseHeart();
+
+        if (_health < 0)
+        {
+            ui.you_died();
         }
     }
 

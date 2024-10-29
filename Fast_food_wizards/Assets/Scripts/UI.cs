@@ -19,6 +19,8 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject you_died_panel;
 
+    private int current_hearts_tracker = 2;
+    [SerializeField] GameObject[] healt_icons; 
 
     private int score;
 
@@ -31,6 +33,7 @@ public class UI : MonoBehaviour
     private void Start()
     {
         you_died_panel.SetActive(false);
+      
     }
     public void change_power_icon (Ability ability)
     {
@@ -46,6 +49,29 @@ public class UI : MonoBehaviour
         you_died_panel.SetActive(true);
         Time.timeScale = 0;
     }
+
+
+    public void LoseHeart ()
+    {
+        if (current_hearts_tracker < 0)
+        {
+            current_hearts_tracker = 0;
+        }
+
+        if (current_hearts_tracker < healt_icons.Length)
+        
+        {
+            healt_icons[current_hearts_tracker].SetActive(false);
+            --current_hearts_tracker;
+        }
+    }
+
+    public void GainHeart()
+    {
+        healt_icons[current_hearts_tracker].SetActive(true);
+        current_hearts_tracker++;
+    }
+
 
 
     private void Update()
