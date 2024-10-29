@@ -6,7 +6,7 @@ public class SceneScript : MonoBehaviour
 {
 
     [SerializeField] GameObject start_marker;
-    [SerializeField] string name;
+   
     [SerializeField] List<Transform> power_spawn_points;
     [SerializeField] GameObject power_pickup;
 

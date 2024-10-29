@@ -11,6 +11,11 @@ public class Player : MonoBehaviour
     private int _double_jump_max = 0; 
     private int _jump_counter = 0;
 
+    private int _health = 3;
+    [SerializeField] private float _max_fall_velocity = 10;
+    private float fall_detector;
+
+
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform ground_check;
@@ -28,30 +33,28 @@ public class Player : MonoBehaviour
 
 
         flip();
+
+
+
+
     }
 
 
+
+    public void Jump_in_air()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, _jumping_power);
+    }
+
     private void jump ()
     {
-        if (is_grounded())
-        {
-            _jump_counter = 0;
-            // if the player touches ground, allow jump and reset _jump_counter
-            if (Input.GetButtonDown("Jump") && is_grounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, _jumping_power);
-            }  
-        } 
-        else
-        {
-            if (Input.GetButtonDown("Jump") && _jump_counter < _double_jump_max)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, _jumping_power);
-                _jump_counter ++;
-            }
-        }
 
 
+        if (Input.GetButtonDown("Jump") && is_grounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, _jumping_power);
+            
+        }  
 
 
 
@@ -65,6 +68,18 @@ public class Player : MonoBehaviour
 
 
 
+    }
+
+    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.relativeVelocity.magnitude >= _max_fall_velocity) 
+        {
+
+            print("take damgae");
+        }
     }
 
 
@@ -87,6 +102,19 @@ public class Player : MonoBehaviour
 
     private bool is_grounded ()
     {
-        return Physics2D.OverlapCircle(ground_check.position, 0.2f, ground_layer);
+
+        if (Physics2D.OverlapCircle(ground_check.position, 0.2f, ground_layer))
+        {
+            
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+
+       
+
     }
 }

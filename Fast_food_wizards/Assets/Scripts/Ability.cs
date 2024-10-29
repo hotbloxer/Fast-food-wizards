@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ability : MonoBehaviour
 {
    
-    protected string name;
+  
     protected string description;
     protected float cool_down;
     protected Sprite icon;
@@ -25,6 +25,10 @@ public class Ability : MonoBehaviour
         power_holder.set_active_ability(ability);
     }
 
+    virtual public string Get_UI_text()
+    {
+        return "";
+    }
 
 
 }

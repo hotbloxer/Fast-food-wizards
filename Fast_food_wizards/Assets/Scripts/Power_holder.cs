@@ -13,22 +13,14 @@ public class Power_holder : MonoBehaviour
     [SerializeField] UI ui;
     [SerializeField] private GameObject firebolt_obj;
     [SerializeField] private Player _player;
-
- 
-
-
-
+    
+         
     private float _firebolt_cooldown = 1;
-
-
-
     private float _fireball_cooldown_counter = 0;
     private bool _fireball_available = true;
 
 
     [SerializeField] private FireBolt _firebolt;
-
-
 
 
     public void set_active_ability (Ability ability)
@@ -39,15 +31,19 @@ public class Power_holder : MonoBehaviour
 
     }
 
+    public void reset_ability()
+    {
+        set_active_ability(_firebolt); 
+
+    }
 
 
-  
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        reset_ability();
 
     }
 
@@ -80,11 +76,7 @@ public class Power_holder : MonoBehaviour
 
         if(Input.GetButtonDown("Fire2") )
         {
-           
-            
             current_ability.use_ability();
-
-
         }
 
 
