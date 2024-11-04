@@ -87,6 +87,6 @@ public class Player : MonoBehaviour
 
     private bool is_grounded ()
     {
-        return Physics2D.OverlapCircle(ground_check.position, 0.2f, ground_layer);
+        return Physics2D.OverlapCircle(ground_check.position, 0.8f, ground_layer);
     }
 }
