@@ -16,6 +16,8 @@ public class UI : MonoBehaviour
     [SerializeField] TMP_Text icon_text_displayer;
     [SerializeField] TMP_Text score_displayer;
     [SerializeField] Player player;
+    [SerializeField] HighScore highScore;
+
 
     [SerializeField] GameObject you_died_panel;
 
@@ -48,6 +50,11 @@ public class UI : MonoBehaviour
     {
         you_died_panel.SetActive(true);
         Time.timeScale = 0;
+        //TODO implement highscore input system
+        if (highScore.CheckScore(score))
+        {
+            print("show new entry");
+        }
     }
 
 

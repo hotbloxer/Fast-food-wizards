@@ -12,6 +12,7 @@ public class reset_and_scene_switch : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     public void setNewIndex (int index)
@@ -20,15 +21,22 @@ public class reset_and_scene_switch : MonoBehaviour
         
         stageint = index;
 
+    }
 
+    public void StartNewGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
 
     }
 
+
     public void reset_game()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
      
- 
+        
 
 
     }
