@@ -96,6 +96,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void suicide ()
+    {
+        for (int i = 0; i < _health; i++)
+        {
+            take_damage();
+        }
+        
+    }
+
 
     private void FixedUpdate()
     {

@@ -18,7 +18,7 @@ public class PatrolState : State
         else
         {
             BurgerTransform.transform.Translate(Manager.speed, 0.0f, 0.0f * Time.deltaTime);
-            Debug.Log("Moving!");
+            //Debug.Log("Moving!");
             Manager.patroling = true;
             Manager.attacking = false;
             return this;

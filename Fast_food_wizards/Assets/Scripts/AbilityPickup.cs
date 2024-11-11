@@ -23,11 +23,12 @@ public class AbilityPickup : MonoBehaviour
 
 
 
+
     private Ability current_ability;
 
     
 
-    private enum abilities {DOUBLEJUMP, SPAWNMEAT, SUICIDE}
+    private enum abilities {DOUBLEJUMP, SPAWNMEAT, SUICIDE, SUPERDOUBLEJUMP}
 
     
 
@@ -56,6 +57,15 @@ public class AbilityPickup : MonoBehaviour
             case abilities.SPAWNMEAT:
                 
                 current_ability = spawn_meat;
+                break;
+
+            case abilities.SUICIDE:
+                player.suicide();
+                break;
+
+            case abilities.SUPERDOUBLEJUMP:
+                current_ability = double_jump;
+                
                 break;
 
         }

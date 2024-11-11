@@ -32,14 +32,14 @@ public class AttackState : State
             if (delay > 0)
             {
                 delay--;
-                Debug.Log("Delaying");
+                //Debug.Log("Delaying");
             }
             else
             {
                 grunt.pitch = Random.Range(0.5f, 2.0f);
                 grunt.Play();
                 rb.AddForce(target * force);
-                Debug.Log("CHARGEEEEEEEEEEEEEE!!!!!!");
+                //Debug.Log("CHARGEEEEEEEEEEEEEE!!!!!!");
                 delay = 500;
             }
             return this;

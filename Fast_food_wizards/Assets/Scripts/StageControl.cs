@@ -7,6 +7,7 @@ public class StageControl : MonoBehaviour
 
     [SerializeField] GameObject[] stages;
     [SerializeField] Player player;
+    [SerializeField] int startStage;
 
     int current_stage_index = 0;
     int stage_number = 0;
@@ -28,7 +29,7 @@ public class StageControl : MonoBehaviour
 
     private void make_queue() 
     {
-        stagesIndex.Add(0);
+        stagesIndex.Add(startStage);
         stagesIndex.Add(1);
         stagesIndex.Add(2);
 
@@ -66,9 +67,9 @@ public class StageControl : MonoBehaviour
 
 
 
-
     private void change_current_scene()
     {
+        print("changing stage");
         GameObject previousStage = stages[current_stage_index];
 
         ++stage_number;

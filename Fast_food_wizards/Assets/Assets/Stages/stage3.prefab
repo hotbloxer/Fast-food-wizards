@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 551467731907709411}
   - component: {fileID: 5795083895491919417}
   m_Layer: 0
-  m_Name: stage2
+  m_Name: stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

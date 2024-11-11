@@ -10,7 +10,7 @@ public class DoubleJump : Ability
     [SerializeField] private Player player;
     [SerializeField] private WallBoxes level_Control;
     [SerializeField] private Power_holder power_holder;
-    private int amount_of_jumps = 10;
+    [SerializeField] private int amount_of_jumps = 10;
 
     public override string Get_UI_text() 
     { 
