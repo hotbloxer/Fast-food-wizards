@@ -8,29 +8,41 @@ public class HighScore : MonoBehaviour
 {
 
     [SerializeField] TMP_Text[] score_label;
+    [SerializeField] TMP_InputField nameInput;
+    private int score; 
+
     private const int amountOfVisibleScores = 6;
 
+    private string highscoreName;
     private List<string> highScore = new List<string> ();
 
+    public void SetScore(int score)
+    {
+        this.score = score;
+    }
 
     private void LoadHighscore()
     {
         for (int i = 0; i < amountOfVisibleScores; i++) 
         {
-            print(i);
             if (PlayerPrefs.GetString(i.ToString()) != "")
             {
-                highScore.Add (PlayerPrefs.GetString(i.ToString()));
+                
+                 highScore.Add (PlayerPrefs.GetString(i.ToString()));
             }
 
             else
             {
-                highScore.Add( "---");
+                highScore.Add( "Peter : 0");
             }
         }
-
     }
 
+    public void SetNameForHighscore ()
+    {
+        highscoreName = nameInput.text;
+        print(highscoreName);
+    }
     private void SetHighscoreLabels ()
     {
         for (int i = 0; i < amountOfVisibleScores; i++)
@@ -39,45 +51,86 @@ public class HighScore : MonoBehaviour
         }
     }
 
-
-    public bool CheckScore (int newScore)
+    private int GetScoreFromString(string rawScore)
     {
-        // check om score er højere end den laveste
-        return newScore > int.Parse(highScore[highScore.Count - 1]) ? true: false;
+        return int.Parse(rawScore.Split(':')[1]);
     }
 
+    public bool IsScoreHigherThanLastOnScoreboard (int score)
+    {
+        return GetScoreFromString(highScore[5]) < score;  
+    }
 
+    private string CombineScoreAndName (string name, int score)
+    {
+        return name + " : " + score;
+    }
+    
 
+    public void AcceptName ()
+    {
+        GetPlacementIndexOnHighscore();
+        InsertInHighScore(GetPlacementIndexOnHighscore());
+        RemoveLastEntryInHighScore();
+        SaveHighScore();
+      
+    }
 
-      public void SetNewScore (string name, int newScore)
+    private void InsertInHighScore (int index)
+    {
+        highScore.Insert(index, CombineScoreAndName(highscoreName, score));
+    }
+
+    private void RemoveLastEntryInHighScore ()
+    {
+        highScore.RemoveAt(highScore.Count - 1);
+    }
+    private int GetPlacementIndexOnHighscore ()
     {   
-        for (int i = 0; i< highScore.Count; i++)
+        for (int i = 0; i < highScore.Count; i++)
         {
-            if (newScore < int.Parse(highScore[i]))
+            if (score < GetScoreFromString(highScore[i]))
             {
                 continue;
             }
 
-            if (newScore > int.Parse(highScore[i]))
+            else if (score > GetScoreFromString(highScore[i]))
             {
-                highScore.Insert(i, name);
+                return i;
             }
 
-            else
+            else 
             {
-                highScore.Insert(i+1, name);
+                return i;
             }
+
+         
         }
-        
-        highScore.RemoveAt(highScore.Count - 1);
+        return -1;
+    }
+
+
+    private void SaveHighScore ()
+    {
+        for (int i = 0; i < amountOfVisibleScores; i++)
+        {
+            PlayerPrefs.SetString(i.ToString(), highScore[i]);
+        }
+    }
+
+    private void ResetHighScore () 
+    {
+        for (int i = 0; i < amountOfVisibleScores; i++ )
+        {
+            PlayerPrefs.SetString(i.ToString(), $"Peter : {42 - i}");
+        } 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ResetHighScore();
         LoadHighscore();
-        SetNewScore("oeeter", 4);
         SetHighscoreLabels();
 
     }
@@ -85,6 +138,8 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    
         
     }
 }

@@ -11,32 +11,38 @@ public class reset_and_scene_switch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+
     }
 
     public void setNewIndex (int index)
-    {
-
-        
+    {  
         stageint = index;
-
     }
 
     public void StartNewGame()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
-
     }
 
 
-    public void reset_game()
+    private void reset_game()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-     
-        
+        SceneManager.LoadScene("SampleScene");
+
+    }
+
+    public void SwitchToStartPage ()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Start screen");
+    }
+
+    public void SwitchToGamePage()
+    {
+
+        reset_game();
 
 
     }
@@ -44,6 +50,7 @@ public class reset_and_scene_switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
 }
