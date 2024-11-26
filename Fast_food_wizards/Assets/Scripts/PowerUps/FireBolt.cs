@@ -23,6 +23,7 @@ public class FireBolt : Ability
 
     public void shoot()
     {
+        print(_player.transform.position);
         _fireBolt.gameObject.transform.rotation = _player.transform.rotation;
         _fireBolt.gameObject.transform.position = _player.transform.position;
         _fireBolt.gameObject.GetComponent<FireBolt_Mechanics>().shoot();
@@ -35,7 +36,24 @@ public class FireBolt : Ability
         _fireBolt.gameObject.transform.position = new Vector3 (-50,-50, 1);
 
     }
- 
+
+    private void Update()
+    {
+    
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (_fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+        {
+            _fireBolt.transform.forward = new Vector3(
+                _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.x,
+                _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.y,
+                -2);
+        }
+    }
+
 
 }
 

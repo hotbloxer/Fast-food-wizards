@@ -21,8 +21,8 @@ public class SceneScript : MonoBehaviour
 
     public void Spawn_Powers ()
     {
-
-        Transform new_powerup_transform = power_spawn_points[Random.Range(0, power_spawn_points.Count)];
+        print("spawining");
+        Transform new_powerup_transform = power_spawn_points[Random.Range(0, power_spawn_points.Count-1)];
         GameObject newPowe = Instantiate(power_pickup);
         newPowe.transform.localPosition = new_powerup_transform.position;
 

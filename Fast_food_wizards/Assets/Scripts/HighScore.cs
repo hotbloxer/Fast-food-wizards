@@ -45,9 +45,15 @@ public class HighScore : MonoBehaviour
     }
     private void SetHighscoreLabels ()
     {
-        for (int i = 0; i < amountOfVisibleScores; i++)
+        for (int i = 0; i < amountOfVisibleScores ; i++)
         {
-            score_label[i].text = highScore[i];
+            try 
+            { 
+                score_label[i].text = highScore[i];
+            } catch
+            {
+                print("noHighscore");
+            }
         }
     }
 
@@ -112,7 +118,7 @@ public class HighScore : MonoBehaviour
 
     private void SaveHighScore ()
     {
-        for (int i = 0; i < amountOfVisibleScores; i++)
+        for (int i = 0; i < amountOfVisibleScores -1; i++)
         {
             PlayerPrefs.SetString(i.ToString(), highScore[i]);
         }

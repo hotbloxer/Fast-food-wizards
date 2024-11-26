@@ -23,7 +23,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject you_died_with_honor_panel;
 
     private int current_hearts_tracker = 2;
-    [SerializeField] GameObject[] healt_icons; 
+    [SerializeField] GameObject healthImage;
 
     private int score;
 
@@ -71,18 +71,20 @@ public class UI : MonoBehaviour
             current_hearts_tracker = 0;
         }
 
-        if (current_hearts_tracker < healt_icons.Length)
+        if (current_hearts_tracker < 4)
         
         {
-            healt_icons[current_hearts_tracker].SetActive(false);
-            --current_hearts_tracker;
+            current_hearts_tracker --;
+            healthImage.GetComponent<HelathSelector>().SetHPImage(current_hearts_tracker);
+            
         }
     }
 
     public void GainHeart()
     {
-        healt_icons[current_hearts_tracker].SetActive(true);
         current_hearts_tracker++;
+        healthImage.GetComponent<HelathSelector>().SetHPImage(current_hearts_tracker);
+        
     }
 
 

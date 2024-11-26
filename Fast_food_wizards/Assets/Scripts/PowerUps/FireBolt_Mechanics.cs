@@ -18,20 +18,12 @@ public class FireBolt_Mechanics : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-
-
-    }
 
     public void shoot()
     {
         Vector3 velocity = player_Rb.velocity;
         Vector3 aim_direction = Vector3.Normalize(new Vector3(Random.Range(-0.2f, 0.2f), 1, 0));
-
-        print(velocity);
 
         if (velocity.magnitude < 1) 
         {
@@ -43,7 +35,8 @@ public class FireBolt_Mechanics : MonoBehaviour
         rb.AddForce((aim_direction * Speed) + velocity);
 
 
-
-
     }
+
+
+
 }

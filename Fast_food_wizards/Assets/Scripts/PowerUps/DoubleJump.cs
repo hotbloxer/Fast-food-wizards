@@ -10,7 +10,7 @@ public class DoubleJump : Ability
     [SerializeField] private Player player;
     [SerializeField] private WallBoxes level_Control;
     [SerializeField] private Power_holder power_holder;
-    [SerializeField] private int amount_of_jumps = 10;
+    [SerializeField] private int amount_of_jumps;
 
     public override string Get_UI_text() 
     { 
@@ -33,7 +33,7 @@ public class DoubleJump : Ability
     public override void grant_ability(Power_holder power_holder, Ability ability)
     {
         base.grant_ability(power_holder, ability);
-        amount_of_jumps = 10;
+        
     }
 
 
