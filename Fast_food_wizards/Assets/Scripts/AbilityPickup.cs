@@ -34,8 +34,11 @@ public class AbilityPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        current_ability.grant_ability(power_holder, current_ability);
-        Destroy(gameObject);
+        if (collision.name == "player")
+        {
+            current_ability.grant_ability(power_holder, current_ability);
+            Destroy(gameObject);
+        }
     }
 
     

@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     private int _double_jump_max = 0; 
     private int _jump_counter = 0;
 
-    private int _health = 3;
+    public float _hitStun;
+
+    public float _health;
     [SerializeField] private float _max_fall_velocity = 10;
     private float fall_detector;
 
@@ -29,16 +31,31 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _horizontal = Input.GetAxisRaw("Horizontal");
+        print("Player HP:" + _health);
+        //if (_hitStun == 0)
+        //{
+            _horizontal = Input.GetAxisRaw("Horizontal");
 
-        jump();
-
-
-        flip();
-
-        delay_to_next_trigger++; 
+            jump();
 
 
+            flip();
+
+            delay_to_next_trigger++;
+        /*}
+        else
+        {
+            _hitStun -= Time.deltaTime;
+            if (_hitStun < 0)
+            {
+                _hitStun = 0;
+            }
+        }*/
+
+        if (_health <= 0)
+        {
+            ui.you_died();
+        }
     }
 
 
@@ -74,27 +91,18 @@ public class Player : MonoBehaviour
     int delay_to_next_trigger = 10; // to prevent double trigger of OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (delay_to_next_trigger > 10)
+       /* if (delay_to_next_trigger > 10)
         {
             if (collision.relativeVelocity.magnitude >= _max_fall_velocity)
             {
                 take_damage();
                 delay_to_next_trigger = 0;
             }
-        }
+        }*/
 
     }
 
-    private void take_damage()
-    {
-        _health -= 1;
-        ui.LoseHeart();
 
-        if (_health < 0)
-        {
-            ui.you_died();
-        }
-    }
 
 
     private void FixedUpdate()
