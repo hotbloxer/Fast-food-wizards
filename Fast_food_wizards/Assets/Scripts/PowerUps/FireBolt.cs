@@ -45,13 +45,13 @@ public class FireBolt : Ability
 
     private void FixedUpdate()
     {
-        if (_fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity != Vector2.zero)
-        {
-            _fireBolt.transform.forward = new Vector3(
-                _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.x,
-                _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.y,
-                -2);
-        }
+       // if (_fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+       // {
+       //     _fireBolt.transform.forward = new Vector3(
+       //         _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.y,
+       //         _fireBolt.gameObject.GetComponent<Rigidbody2D>().velocity.x,
+       //         -2);
+       // }
     }
 
 
