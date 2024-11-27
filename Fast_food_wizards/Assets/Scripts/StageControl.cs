@@ -115,7 +115,7 @@ public class StageControl : MonoBehaviour
 
 
         // reset spawned power pickups
-        stages[current_stage_index].GetComponent<SceneScript>().Spawn_Powers();
+        stages[current_stage_index].GetComponent<SceneScript>().Activate_spawners();
 
     }
 

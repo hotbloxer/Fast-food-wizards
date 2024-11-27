@@ -35,7 +35,7 @@ public class AbilityPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "player")
+        if (collision.name == "Player")
         {
             current_ability.grant_ability(power_holder, current_ability);
             Destroy(gameObject);
@@ -62,9 +62,7 @@ public class AbilityPickup : MonoBehaviour
                 current_ability = spawn_meat;
                 break;
 
-            case abilities.SUICIDE:
-                player.suicide();
-                break;
+ 
 
             case abilities.SUPERDOUBLEJUMP:
                 current_ability = double_jump;
