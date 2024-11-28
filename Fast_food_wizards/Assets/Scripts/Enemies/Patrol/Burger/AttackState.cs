@@ -15,7 +15,7 @@ public class AttackState : State
     public int force;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-    public ParticleSystem particles;
+    public GameObject particles;
 
     public override State RunCurrentState()
     {
