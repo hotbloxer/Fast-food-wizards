@@ -51,12 +51,6 @@ public class StageControl : MonoBehaviour
             
         }
 
-        foreach (int i in stagesIndex)
-        {
-            print("numbers of stages" + i);
-        }
-
-        
     }
 
     
