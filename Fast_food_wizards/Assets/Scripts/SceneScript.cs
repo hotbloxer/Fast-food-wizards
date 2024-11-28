@@ -10,9 +10,12 @@ public class SceneScript : MonoBehaviour
    
     [SerializeField] List<Transform> power_spawn_points;
     [SerializeField] List<Transform> enemy_spawn_points;
+    [SerializeField] List<Transform> burger_spawn_points;
 
     [SerializeField] GameObject power_pickup;
     [SerializeField] GameObject enemy_to_spawn;
+    [SerializeField] GameObject burger;
+
 
     [SerializeField] Transform player;
     [SerializeField] int  baseEnemyMultiplier;
@@ -27,18 +30,19 @@ public class SceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
 
+        Spawn_Burgers();
 
     }
 
     public void Activate_spawners ()
     {
-        print("activate spawnders" + name);
+        Spawn_enemies();
+        
         try
         {
             Spawn_Powers();
-            Spawn_enemies();
+            
         }
 
         catch { }
@@ -60,7 +64,7 @@ public class SceneScript : MonoBehaviour
 
     private void Spawn_enemies ()
     {
-
+        
 
         int indexToPick = 0;
         for (int i = 0; i < baseEnemyMultiplier + (highscore / 100); i++ )
@@ -75,21 +79,24 @@ public class SceneScript : MonoBehaviour
 
     private void Spawn_Burgers()
     {
-        // TODO get higscore
-        //int highscore = (int) player.transform.position.y;
-
-
-
-        for (int i = 0; i < baseEnemyMultiplier + (highscore / 100); i++)
+        if (burger_spawn_points.Count > 0)
         {
-
-            if (i < enemy_spawn_points.Count - 1)
+            for (int i = 0; i < 1 + (highscore / 100); i++)
             {
-                Transform new_enemy_transform = enemy_spawn_points[Random.Range(0, enemy_spawn_points.Count - 1)];
-                GameObject new_enemy = Instantiate(enemy_to_spawn);
-                new_enemy.transform.localPosition = new_enemy_transform.position;
+
+                if (i < burger_spawn_points.Count - 1)
+                {
+                    Transform new_enemy_transform = burger_spawn_points[Random.Range(0, burger_spawn_points.Count - 1)];
+                    GameObject new_enemy = Instantiate(burger);
+                    new_enemy.transform.localPosition = new_enemy_transform.position;
+                }
             }
+
         }
+
+
+
+
     }
 
     int counter = 0;
