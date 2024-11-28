@@ -12704,6 +12704,14 @@ PrefabInstance:
       propertyPath: power_pickup
       value: 
       objectReference: {fileID: 747411514}
+    - target: {fileID: 4111864433372827047, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
+      propertyPath: enemy_to_spawn
+      value: 
+      objectReference: {fileID: 2624039229499530819, guid: b76ea458e2428b74581c5ddecd234216, type: 3}
+    - target: {fileID: 4111864433372827047, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
+      propertyPath: baseEnemyMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5321703942021551866, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2

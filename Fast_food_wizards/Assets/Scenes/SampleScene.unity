@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5795083895491919417, guid: 124b6dc05f0188f4a9cce73d58a73bf4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
     - target: {fileID: 7962505548290962457, guid: 124b6dc05f0188f4a9cce73d58a73bf4, type: 3}
       propertyPath: m_Name
       value: stage3
@@ -2243,7 +2247,7 @@ MonoBehaviour:
   _speed: 8
   _jumping_power: 22
   _hitStun: 0
-  _health: 0
+  _health: 4
   _max_fall_velocity: 20
   rb: {fileID: 532671598}
   ground_check: {fileID: 405643080}
@@ -2735,6 +2739,10 @@ PrefabInstance:
       propertyPath: power_holder
       value: 
       objectReference: {fileID: 1701679870}
+    - target: {fileID: 5795083895491919417, guid: dee9b390785dc234d9bbd921ec6cd26a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
     - target: {fileID: 7962505548290962457, guid: dee9b390785dc234d9bbd921ec6cd26a, type: 3}
       propertyPath: m_Name
       value: stage2
@@ -3078,6 +3086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stage0 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4443867648304360457, guid: ac75ac552ae973f48ac8190f53bea91f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
     - target: {fileID: 4443867648304360457, guid: ac75ac552ae973f48ac8190f53bea91f, type: 3}
       propertyPath: power_pickup
       value: 
@@ -3429,6 +3441,10 @@ PrefabInstance:
       propertyPath: power_holder
       value: 
       objectReference: {fileID: 1701679870}
+    - target: {fileID: 5795083895491919417, guid: a95636e42b0a69f4caff21dfd7c76141, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
     - target: {fileID: 7962505548290962457, guid: a95636e42b0a69f4caff21dfd7c76141, type: 3}
       propertyPath: m_Name
       value: stage2 1
@@ -11381,6 +11397,10 @@ PrefabInstance:
       value: stage1 1
       objectReference: {fileID: 0}
     - target: {fileID: 4111864433372827047, guid: afbf400e8c8834e40826805d97f949d9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
+    - target: {fileID: 4111864433372827047, guid: afbf400e8c8834e40826805d97f949d9, type: 3}
       propertyPath: power_pickup
       value: 
       objectReference: {fileID: 74816143}
@@ -12373,6 +12393,10 @@ PrefabInstance:
       value: stage0
       objectReference: {fileID: 0}
     - target: {fileID: 4443867648304360457, guid: 7b29b261ff4740040bb58b73c9cf2a2f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
+    - target: {fileID: 4443867648304360457, guid: 7b29b261ff4740040bb58b73c9cf2a2f, type: 3}
       propertyPath: power_pickup
       value: 
       objectReference: {fileID: 322525402}
@@ -12503,6 +12527,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 2380402859256510753, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111864433372827047, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 532671596}
     - target: {fileID: 4111864433372827047, guid: d4d5ab3e64e9b5d45a485644d4818912, type: 3}
       propertyPath: power_pickup
       value: 
