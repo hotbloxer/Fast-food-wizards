@@ -5339,7 +5339,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start_marker: {fileID: 6639340042437098769}
-  power_spawn_points: []
+  power_spawn_points:
+  - {fileID: 4451465748779517868}
+  - {fileID: 5238433056115799317}
+  - {fileID: 7476636635918742640}
+  - {fileID: 7522412661594031353}
+  - {fileID: 2867892836760492541}
+  - {fileID: 2162672469043288554}
+  - {fileID: 4730405842404974106}
+  - {fileID: 1588886106153688171}
   enemy_spawn_points:
   - {fileID: 4451465748779517868}
   - {fileID: 5238433056115799317}

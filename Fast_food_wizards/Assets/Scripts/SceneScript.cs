@@ -27,13 +27,14 @@ public class SceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
 
-        
+
     }
 
     public void Activate_spawners ()
     {
-        
+        print("activate spawnders" + name);
         try
         {
             Spawn_Powers();

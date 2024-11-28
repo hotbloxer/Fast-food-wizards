@@ -84,12 +84,17 @@ public class StageControl : MonoBehaviour
         }
 
 
+       
         GameObject previousStage = stages[current_stage_index];
+
 
 
         ++stage_number;
         current_stage_index = stagesIndex[stage_number];
         print("changing stage: " + stagesIndex[stage_number]);
+
+
+
 
         //TODO implement proper selction method
         stages[current_stage_index].transform.position =
@@ -106,10 +111,10 @@ public class StageControl : MonoBehaviour
                 previousStage.transform.position.y,
                 _lowerDisplay);
 
-
-
         // reset spawned power pickups
         stages[current_stage_index].GetComponent<SceneScript>().Activate_spawners();
+
+
 
     }
 
