@@ -9,10 +9,12 @@ public class Hurtbox : MonoBehaviour
     public int force;
     public HealthManager healthmanager;
     public float damage;
+    public StateManager StateManager;
+    public AttackState AttackState;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "player")
+        if (collision.name == "Player" && StateManager.currentState == AttackState)
         {
             Debug.Log("Hit player!");
             healthmanager.take_damage(damage);

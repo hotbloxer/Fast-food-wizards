@@ -8,8 +8,10 @@ public class PatrolState : State
     public StateManager Manager;
     public bool canSeePlayer;
     public AttackState attackState;
+    public Animator animator;
     public override State RunCurrentState()
     {
+        animator.SetBool("Flap", true);
         if (canSeePlayer)
         {
             attackState.hitSomething = false;
