@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Player HP:" + _health);
+        //print("Player HP:" + _health);
         //if (_hitStun == 0)
         //{
             _horizontal = Input.GetAxisRaw("Horizontal");
