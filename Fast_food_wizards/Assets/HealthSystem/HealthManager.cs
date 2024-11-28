@@ -9,7 +9,6 @@ public class HealthManager : MonoBehaviour
     public Image Health2;
     public Image Health3;
     public Image Health4;
-    public float Health = 100;
     private float falltime;
     public Rigidbody2D PlayerRB;
     public float iframes;
@@ -24,7 +23,6 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame

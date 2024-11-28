@@ -32,7 +32,7 @@ public class StunState : State
             {
                 delay = 3;
                 attackState.hitSomething = false;
-                return attackState;
+                return patrol;
             }
         }
         return this;

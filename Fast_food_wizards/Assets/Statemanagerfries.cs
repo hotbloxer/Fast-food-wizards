@@ -11,7 +11,7 @@ public class Statemanagerfries : MonoBehaviour
     public Rigidbody2D rb;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != "player")
+        if (collision.gameObject.name != "Player")
         {
             Flip();
         }

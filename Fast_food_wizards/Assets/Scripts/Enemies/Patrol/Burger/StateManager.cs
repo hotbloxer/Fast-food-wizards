@@ -23,7 +23,7 @@ public class StateManager : MonoBehaviour
             Flip();
             bounce.Play();
         }
-        if (attacking && collision.gameObject.name == "player")
+        if (attacking && collision.gameObject.name == "Player")
         {
             Attack.hitSomething = true;
         }

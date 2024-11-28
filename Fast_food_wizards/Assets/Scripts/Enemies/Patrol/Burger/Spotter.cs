@@ -7,7 +7,7 @@ public class Spotter : MonoBehaviour
     public PatrolState PatrolState;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "player")
+        if (collision.name == "Player")
         {
             PatrolState.canSeePlayer = true;
         }
