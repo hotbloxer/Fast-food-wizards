@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Walls
   - Burger
+  - Bee
   layers:
   - Default
   - TransparentFX

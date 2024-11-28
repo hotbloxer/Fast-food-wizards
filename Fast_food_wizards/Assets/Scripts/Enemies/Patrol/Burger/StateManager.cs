@@ -9,10 +9,18 @@ public class StateManager : MonoBehaviour
     public float speed;
     public bool patroling = true;
     public bool attacking = false;
+    public bool stunned = false;
     public AttackState Attack;
+    public StunState Stun;
     public AudioSource bounce;
     void Update()
     {
+        if (stunned)
+        {
+            currentState = Stun;
+            stunned = false;
+        }
+            
         RunStateMachine();
     }
 

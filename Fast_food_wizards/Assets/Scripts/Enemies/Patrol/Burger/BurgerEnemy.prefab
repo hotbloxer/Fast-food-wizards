@@ -283,7 +283,8 @@ MonoBehaviour:
   delay: 5
   force: 1200
   animator: {fileID: 3530885001771078755}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 3690251780012714918}
+  particles: {fileID: 8846125700955878976}
 --- !u!1 &6983666198402739751
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +303,7 @@ GameObject:
   - component: {fileID: 3530885001771078755}
   m_Layer: 6
   m_Name: BurgerEnemy
-  m_TagString: Untagged
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,8 +364,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1618678563
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1080883162, guid: 85c7ada49f426b2439e5945f4687e8bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,7 +466,9 @@ MonoBehaviour:
   speed: -0.1
   patroling: 1
   attacking: 0
+  stunned: 0
   Attack: {fileID: 5888692361130642612}
+  Stun: {fileID: 3658538202979781185}
   bounce: {fileID: 490981879183821214}
 --- !u!82 &8011547408194318637
 AudioSource:

@@ -13,8 +13,6 @@ public class FireBolt : Ability
     [SerializeField] GameObject _fireBolt;
     [SerializeField] Player _player;
 
-
-
     public void Start()
     {
         icon = GetComponent<SpriteRenderer>().sprite;
@@ -41,6 +39,14 @@ public class FireBolt : Ability
     {
     
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bee")
+        {
+            collision.gameObject.GetComponent<StateManager>().stunned = true;
+        }
     }
 
     private void FixedUpdate()
