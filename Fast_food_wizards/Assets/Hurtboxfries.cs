@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hurtbox : MonoBehaviour
+public class Hurtboxfries : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Rigidbody2D burger;
-    public int force;
     public HealthManager healthmanager;
-    public float damage;
-    public StateManager StateManager;
-    public AttackState AttackState;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player")
         {
             Debug.Log("Hit player!");
-            healthmanager.take_damage(damage);
+            healthmanager.take_damage(10);
             /*Vector3 dir = rb.position - burger.position;
             rb.AddForce(dir * (force * burger.velocity) + new Vector2(10,10));*/
         }

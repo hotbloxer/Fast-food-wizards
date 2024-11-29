@@ -18,6 +18,7 @@ public class Wander : State
         if (jump)
         {
             jump = false;
+            jumpstate.delay = 1.0f;
             return jumpstate;
         }
         delay -= Time.deltaTime;
