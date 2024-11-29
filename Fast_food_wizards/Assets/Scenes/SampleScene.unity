@@ -3548,7 +3548,7 @@ PrefabInstance:
     - target: {fileID: 5795083895491919417, guid: a95636e42b0a69f4caff21dfd7c76141, type: 3}
       propertyPath: burger
       value: 
-      objectReference: {fileID: 8314252625330828109, guid: e8426998b0e84b142aa3eb993faa5bf9, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5795083895491919417, guid: a95636e42b0a69f4caff21dfd7c76141, type: 3}
       propertyPath: player
       value: 
@@ -11781,6 +11781,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1840965918
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.020086415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935263995337523045, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160414114788066351, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
+      propertyPath: m_Name
+      value: New burger enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 402eaf13b91dc5544b190a20db97e0c1, type: 3}
 --- !u!1 &1843732928
 GameObject:
   m_ObjectHideFlags: 0
@@ -13319,3 +13376,4 @@ SceneRoots:
   - {fileID: 1763225596}
   - {fileID: 343041043}
   - {fileID: 1906395919}
+  - {fileID: 1840965918}

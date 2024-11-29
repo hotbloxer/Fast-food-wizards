@@ -35,7 +35,7 @@ public class HealthManager : MonoBehaviour
         } 
        else 
         {
-            if (falltime > 1.0f)
+            if (falltime > 0.5f)
             {
                 take_damage(4 + (falltime * falltime) * 4);
                 PlayerRB.velocity = new Vector2(0.0f, 0.0f);
