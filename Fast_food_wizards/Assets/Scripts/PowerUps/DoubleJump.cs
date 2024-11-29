@@ -10,16 +10,18 @@ public class DoubleJump : Ability
     [SerializeField] private Player player;
     [SerializeField] private WallBoxes level_Control;
     [SerializeField] private Power_holder power_holder;
-    [SerializeField] private int amount_of_jumps;
+    [SerializeField] private int amount_of_jumps_const;
+    private int amount_of_jumps; 
 
     public override string Get_UI_text() 
-    { 
-       return amount_of_jumps.ToString(); 
+    {
+        
+        return amount_of_jumps.ToString(); 
     }
 
     private void Start()
     {
-        
+        amount_of_jumps = amount_of_jumps_const;
         icon = GetComponent<SpriteRenderer>().sprite;
     }
 
@@ -32,6 +34,7 @@ public class DoubleJump : Ability
 
     public override void grant_ability(Power_holder power_holder, Ability ability)
     {
+        amount_of_jumps = amount_of_jumps_const;
         base.grant_ability(power_holder, ability);
         
     }
