@@ -37,9 +37,13 @@ public class StageControl : MonoBehaviour
         List<List<int>> bundles = new List<List<int>>
 
         {
-            new List<int> {0,1,2,3},
-            new List<int> {1, 2, 3, 0 },
-            new List<int> { 1, 4, 0, 3 },
+            new List<int> {0,1,2,3,4,5,6},
+            new List<int> {5, 6},
+            new List<int> { 0, 1},
+            new List<int> { 1, 2},
+            new List<int> { 5, 6},
+            new List<int> { 4, 5},
+            new List<int> { 0, 2},
 
         };
 

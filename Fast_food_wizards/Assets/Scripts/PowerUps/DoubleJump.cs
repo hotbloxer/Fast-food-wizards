@@ -44,6 +44,7 @@ public class DoubleJump : Ability
         if (amount_of_jumps < 1)
         {
             power_holder.reset_ability();
+            amount_of_jumps = 0;
         }
     }
 
