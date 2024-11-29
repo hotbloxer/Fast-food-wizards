@@ -17,6 +17,16 @@ public class AttackState : State
     public SpriteRenderer spriteRenderer;
     public GameObject particles;
 
+    private void Awake()
+    {
+         if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
+        {
+            Player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        }
+
+
+    }
+
     public override State RunCurrentState()
     {
         animator.SetBool("Flap", false);
