@@ -11,7 +11,7 @@ public class reset_and_scene_switch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1;
     }
 
     public void setNewIndex (int index)
@@ -25,6 +25,7 @@ public class reset_and_scene_switch : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    
 
     private void reset_game()
     {
@@ -37,6 +38,7 @@ public class reset_and_scene_switch : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Start screen");
+        
     }
 
     public void SwitchToGamePage()
