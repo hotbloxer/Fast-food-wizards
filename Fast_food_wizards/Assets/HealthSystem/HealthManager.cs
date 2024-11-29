@@ -29,15 +29,15 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         //Fall damage ------------
-       if (PlayerRB.velocity.y < 0)
+       if (PlayerRB.velocity.y < -0.5f)
         {
             falltime += Time.deltaTime;
         } 
        else 
         {
-            if (falltime > 0.5f)
+            if (falltime > 0.6f)
             {
-                take_damage(4 + (falltime * falltime) * 4);
+                take_damage(10 + ((falltime + 0.4f) * (falltime + 0.4f)) * 6);
                 PlayerRB.velocity = new Vector2(0.0f, 0.0f);
                 falltime = 0.0f;
             }

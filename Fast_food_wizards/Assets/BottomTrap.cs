@@ -29,7 +29,7 @@ public class BottomTrap : MonoBehaviour
 
         if (collision.gameObject.name == "Player")
         {
-            healthmanager.take_damage(15);
+            healthmanager.take_damage(30);
         }
     }
 }

@@ -12,6 +12,16 @@ public class StunState : State
     public float delay = 3;
     float distance;
     public float maxDistance;
+
+
+
+    private void Start()
+    {
+        if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
+        {
+            player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        }
+    }
     public override State RunCurrentState()
     {
         patrol.canSeePlayer = false;

@@ -10,7 +10,7 @@ public class Trapenemy : MonoBehaviour
     public BottomTrap bottomTrap;
     public Animator animator;
     private bool startmove;
-    private float delay = 2;
+    private float delay = 1;
     public GameObject splatter;
     
     // Start is called before the first frame update

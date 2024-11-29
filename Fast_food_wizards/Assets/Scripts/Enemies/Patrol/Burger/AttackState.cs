@@ -63,10 +63,10 @@ public class AttackState : State
                 particles.gameObject.SetActive(false);
                 rb.AddForce(target * force);
                 //Debug.Log("CHARGEEEEEEEEEEEEEE!!!!!!");
-                delay = 5;
+                delay = 1;
             }
 
-            if (delay < 1.5 && delay > 0)
+            if (delay < 0.5 && delay > 0)
                 particles.gameObject.SetActive(true);
             return this;
         }

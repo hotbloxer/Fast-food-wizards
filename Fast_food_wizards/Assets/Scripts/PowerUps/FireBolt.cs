@@ -21,6 +21,7 @@ public class FireBolt : Ability
 
     public void shoot()
     {
+        stop_power();
         print(_player.transform.position);
         _fireBolt.gameObject.transform.rotation = _player.transform.rotation;
         _fireBolt.gameObject.transform.position = _player.transform.position;

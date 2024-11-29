@@ -8,8 +8,7 @@ public class Player : MonoBehaviour
     public float _speed = 8f;
     public float _jumping_power = 16f;
     private bool _is_facing_right = true;
-    private int _double_jump_max = 0; 
-    private int _jump_counter = 0;
+
 
     public float _hitStun;
 
@@ -25,7 +24,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private UI ui;
 
-    public int Double_jumps { set => _double_jump_max = value; get => _double_jump_max;}
+
 
 
     // Update is called once per frame
