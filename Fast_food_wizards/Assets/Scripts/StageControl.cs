@@ -8,6 +8,7 @@ public class StageControl : MonoBehaviour
     [SerializeField] GameObject[] stages;
     [SerializeField] Player player;
 
+
     int current_stage_index = 0;
     int stage_number = 0;
     List<int> stagesIndex = new List<int>();
@@ -28,16 +29,34 @@ public class StageControl : MonoBehaviour
 
     private void make_queue() 
     {
-        stagesIndex.Add(0);
-        stagesIndex.Add(1);
-        stagesIndex.Add(2);
+        // always start on 1, never end on 1; 
+        // never place the same number twice in a row
+        // except first level
+        // a bundle can have as many numbers as you like
 
-        for (int i = 0; i < 20; i++)
+        List<List<int>> bundles = new List<List<int>>
+
         {
-            stagesIndex.Add(Random.Range(0, stages.Length));
+            new List<int> {0,1,2,3},
+            new List<int> {1, 2, 3, 0 },
+            new List<int> { 1, 4, 0, 3 },
+
+        };
+
+        
+
+        foreach (List<int> bundle in bundles)
+        {
+            stagesIndex.AddRange(bundle);
+            
         }
 
+        foreach (int i in stagesIndex)
+        {
+            print("numbers of stages" + i);
+        }
 
+        
     }
 
     
@@ -51,28 +70,32 @@ public class StageControl : MonoBehaviour
     {
         Vector3 player_pos = player.transform.position;
         Vector3 scene_start_pos = stages[current_stage_index].GetComponent<SceneScript>().Start_marker.transform.position;
-
-    
+ 
         if (player_pos.y - scene_start_pos.y > _stage_change_limit)
         {
-            
-            //_stage_change_limit += _stage_change_limit; // adds distance to next trigger
             return true;
         }
-
         return false;
-
     }
-
 
 
 
     private void change_current_scene()
     {
+
+        // resets stageloop if we run out of stages
+        if (current_stage_index + 1 > stagesIndex.Count - 1)
+        {
+            current_stage_index = 0;
+        }
+
+
         GameObject previousStage = stages[current_stage_index];
+
 
         ++stage_number;
         current_stage_index = stagesIndex[stage_number];
+        print("changing stage: " + stagesIndex[stage_number]);
 
         //TODO implement proper selction method
         stages[current_stage_index].transform.position =

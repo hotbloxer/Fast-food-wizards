@@ -36,9 +36,13 @@ public class Player : MonoBehaviour
 
         flip();
 
-        delay_to_next_trigger++; 
+        delay_to_next_trigger++;
 
-
+        if (Input.GetButtonUp("Fire1"))
+        {
+            
+            suicide();
+        }
     }
 
 
@@ -94,6 +98,17 @@ public class Player : MonoBehaviour
         {
             ui.you_died();
         }
+    }
+
+    public void suicide ()
+    {
+
+
+        for (int i = 0; i < _health; i++)
+        {
+            take_damage();
+        }
+        
     }
 
 

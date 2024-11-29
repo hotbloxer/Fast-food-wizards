@@ -16,11 +16,14 @@ public class UI : MonoBehaviour
     [SerializeField] TMP_Text icon_text_displayer;
     [SerializeField] TMP_Text score_displayer;
     [SerializeField] Player player;
+    [SerializeField] HighScore highScore;
+
 
     [SerializeField] GameObject you_died_panel;
+    [SerializeField] GameObject you_died_with_honor_panel;
 
     private int current_hearts_tracker = 2;
-    [SerializeField] GameObject[] healt_icons; 
+    [SerializeField] GameObject healthImage;
 
     private int score;
 
@@ -29,11 +32,11 @@ public class UI : MonoBehaviour
     
 
 
-
     private void Start()
     {
         you_died_panel.SetActive(false);
-      
+        you_died_with_honor_panel.SetActive(false);
+
     }
     public void change_power_icon (Ability ability)
     {
@@ -46,7 +49,17 @@ public class UI : MonoBehaviour
 
     public void you_died ()
     {
-        you_died_panel.SetActive(true);
+        
+        if (highScore.IsScoreHigherThanLastOnScoreboard(score))
+        {
+            print("honor");
+            you_died_with_honor_panel.SetActive(true);
+        }
+        else
+        {
+            print("no honor");
+            you_died_panel.SetActive(true);
+        }
         Time.timeScale = 0;
     }
 
@@ -58,18 +71,20 @@ public class UI : MonoBehaviour
             current_hearts_tracker = 0;
         }
 
-        if (current_hearts_tracker < healt_icons.Length)
+        if (current_hearts_tracker < 4)
         
         {
-            healt_icons[current_hearts_tracker].SetActive(false);
-            --current_hearts_tracker;
+            current_hearts_tracker --;
+            healthImage.GetComponent<HelathSelector>().SetHPImage(current_hearts_tracker);
+            
         }
     }
 
     public void GainHeart()
     {
-        healt_icons[current_hearts_tracker].SetActive(true);
         current_hearts_tracker++;
+        healthImage.GetComponent<HelathSelector>().SetHPImage(current_hearts_tracker);
+        
     }
 
 
@@ -95,6 +110,7 @@ public class UI : MonoBehaviour
         {
             score = (int)player.transform.position.y;
             score_displayer.text = "SCORE: " + score.ToString();
+            highScore.SetScore (score);
             
         }
 
